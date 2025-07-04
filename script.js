@@ -17,7 +17,7 @@ async function search() {
   const result = data[number];
   const resultDiv = document.getElementById("result");
   if (result) {
-    resultDiv.innerHTML = `<p>${result.name}</p><img src="${result.image}" width="200">`;
+    resultDiv.innerHTML = `<p>${result.name}</p><p>${result.class}</p><img src="${result.image}" width="200">`;
   } else {
     resultDiv.innerHTML = "<p>該当するデータがありません</p>";
   }
