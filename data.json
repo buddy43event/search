@@ -1,8 +1,4 @@
 {
-  "001": { "name": "山田 太郎", "image": "images/001.jpg" },
-  "002": { "name": "佐藤 花子", "image": "images/002.jpg" }
-}
-{
   "4": { "team": "1", "class": "キャプテン", "name": "いぐち　ゆうご", "image": "images/ca01.jpg" },
   "8": { "team": "1", "class": "キャプテン", "name": "うえき　みこと", "image": "images/ca02.jpg" },
   "9": { "team": "1", "class": "キャプテン", "name": "うえだ　めい", "image": "images/ca03.jpg" },
