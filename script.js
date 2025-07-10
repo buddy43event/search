@@ -47,7 +47,7 @@ async function performSearch() {
         <p><strong>${record.name}</strong></p>
         <style>
         p {
-        line-height: 12px;
+        line-height: 16px;
         }
         </style>
         <p>${record.class}</p>
