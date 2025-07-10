@@ -1,19 +1,32 @@
 <!DOCTYPE html>
-<html>
+<html lang="ja">
 <head>
   <meta charset="UTF-8">
-  <title>番号検索</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>番号検索システム</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div id="login">
-    <input type="password" id="password" placeholder="パスワード">
-    <button onclick="checkPassword()">ログイン</button>
-  </div>
 
-  <div id="search" style="display:none;">
-    <input type="text" id="number" placeholder="番号を入力">
-    <button onclick="search()">検索</button>
-    <div id="result"></div>
+  <div class="container">
+
+    <!-- ログイン画面 -->
+    <section id="login">
+      <h1>検索システム ログイン</h1>
+      <input type="password" id="password" placeholder="パスワードを入力">
+      <button id="btn-login">ログイン</button>
+      <p class="error" id="err-login"></p>
+    </section>
+
+    <!-- 検索画面 -->
+    <section id="search" style="display:none;">
+      <h1>番号検索</h1>
+      <input type="text" id="number" placeholder="番号を入力（例：001）">
+      <button id="btn-search">検索</button>
+      <p class="error" id="err-search"></p>
+      <div id="result"></div>
+    </section>
+
   </div>
 
   <script src="script.js"></script>
