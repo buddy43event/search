@@ -45,7 +45,8 @@ async function performSearch() {
     if (record) {
       resultDiv.innerHTML = `
         <p>${record.name}</p>
-        <p>${record.class}<strong>チーム：</strong>${record.team}<strong>走順：</strong>${record.order}</p>
+        <p>${record.class}</p>
+        <p>$<strong>チーム：</strong>${record.team}<strong>走順：</strong>${record.order}</p>
         <img src="${record.image}" alt="${record.name}">
       `;
     } else {
