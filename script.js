@@ -45,6 +45,11 @@ async function performSearch() {
     if (record) {
       resultDiv.innerHTML = `
         <p><strong>${record.name}</strong></p>
+        <style>
+        p {
+        line-height: 12px;
+        }
+        </style>
         <p>${record.class}</p>
         <p>チーム：${record.team}　走順：${record.order}</p>
         <img src="${record.image}" alt="${record.name}">
