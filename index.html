@@ -21,7 +21,14 @@
     <!-- 検索画面 -->
     <section id="search" style="display:none;">
       <h1>番号検索</h1>
-      <input type="text" id="number" placeholder="番号を入力（例：001）">
+      <!-- inputmodeをnumericに設定 -->
+      <input
+        type="text"
+        id="number"
+        placeholder="番号を入力（例：001）"
+        inputmode="numeric"
+        pattern="[0-9]*"
+      >
       <button id="btn-search">検索</button>
       <p class="error" id="err-search"></p>
       <div id="result"></div>
