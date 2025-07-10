@@ -7,6 +7,7 @@ const errLogin = document.getElementById("err-login");
 const errSearch = document.getElementById("err-search");
 const resultDiv = document.getElementById("result");
 const inputNumber = document.getElementById("number");
+const btnSearch = document.getElementById("btn-search");
 
 // ログイン処理
 document.getElementById("btn-login").addEventListener("click", () => {
@@ -19,15 +20,15 @@ document.getElementById("btn-login").addEventListener("click", () => {
   }
 });
 
-// 検索ボックスにフォーカスが当たったらクリア
+// フォーカス時に入力クリア
 inputNumber.addEventListener("focus", () => {
   inputNumber.value = "";
   errSearch.textContent = "";
   resultDiv.innerHTML = "";
 });
 
-// 検索処理
-document.getElementById("btn-search").addEventListener("click", async () => {
+// 検索ロジックを関数化
+async function performSearch() {
   const num = inputNumber.value.trim();
   errSearch.textContent = "";
   resultDiv.innerHTML = "";
@@ -52,5 +53,16 @@ document.getElementById("btn-search").addEventListener("click", async () => {
   } catch (e) {
     errSearch.textContent = "データの読み込みに失敗しました";
     console.error(e);
+  }
+}
+
+// ボタンクリックで検索
+btnSearch.addEventListener("click", performSearch);
+
+// Enterキーで検索
+inputNumber.addEventListener("keydown", (e) => {
+  if (e.key === "Enter") {
+    e.preventDefault();  // フォーム送信などを防止
+    performSearch();
   }
 });
