@@ -1,25 +1,39 @@
-// 簡易パスワード（本番では漏えいしない本格認証を推奨）
+// 簡易パスワード（本番ではサーバーサイド認証を推奨）
 const CORRECT_PASSWORD = "1234";
 
+const loginSection = document.getElementById("login");
+const searchSection = document.getElementById("search");
+const errLogin = document.getElementById("err-login");
+const errSearch = document.getElementById("err-search");
+const resultDiv = document.getElementById("result");
+const inputNumber = document.getElementById("number");
+
+// ログイン処理
 document.getElementById("btn-login").addEventListener("click", () => {
   const pw = document.getElementById("password").value.trim();
   if (pw === CORRECT_PASSWORD) {
-    document.getElementById("login").style.display = "none";
-    document.getElementById("search").style.display = "block";
+    loginSection.style.display = "none";
+    searchSection.style.display = "block";
   } else {
-    document.getElementById("err-login").textContent = "パスワードが違います";
+    errLogin.textContent = "パスワードが違います";
   }
 });
 
+// 検索ボックスにフォーカスが当たったらクリア
+inputNumber.addEventListener("focus", () => {
+  inputNumber.value = "";
+  errSearch.textContent = "";
+  resultDiv.innerHTML = "";
+});
+
+// 検索処理
 document.getElementById("btn-search").addEventListener("click", async () => {
-  const num = document.getElementById("number").value.trim();
-  const err = document.getElementById("err-search");
-  const resultDiv = document.getElementById("result");
-  err.textContent = "";
+  const num = inputNumber.value.trim();
+  errSearch.textContent = "";
   resultDiv.innerHTML = "";
 
   if (!num) {
-    err.textContent = "番号を入力してください";
+    errSearch.textContent = "番号を入力してください";
     return;
   }
 
@@ -33,10 +47,10 @@ document.getElementById("btn-search").addEventListener("click", async () => {
         <img src="${record.image}" alt="${record.name}">
       `;
     } else {
-      err.textContent = "該当するデータがありません";
+      errSearch.textContent = "該当するデータがありません";
     }
   } catch (e) {
-    err.textContent = "データの読み込みに失敗しました";
+    errSearch.textContent = "データの読み込みに失敗しました";
     console.error(e);
   }
 });
