@@ -46,7 +46,7 @@ async function performSearch() {
       resultDiv.innerHTML = `
         <p><strong>${record.name}</strong></p>
         <p>${record.class}</p>
-        <p>チーム：${record.team}　走順：${record.order}</p>
+        <p>${record.group}組　チーム：${record.team}　走順：${record.order}</p>
         <img src="${record.image}" alt="${record.name}">
       `;
     } else {
