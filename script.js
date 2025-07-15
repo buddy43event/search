@@ -1,5 +1,5 @@
 // 簡易パスワード（本番ではサーバーサイド認証を推奨）
-const CORRECT_PASSWORD = "1234";
+const CORRECT_PASSWORD = "7591";
 
 const loginSection = document.getElementById("login");
 const searchSection = document.getElementById("search");
